@@ -4163,6 +4163,7 @@
     <li><div class="tooltip">file_permissions_sshd_private_key<span class="tooltiptext">Verify Permissions on SSH Server Private *_key Key Files</span></div></li>
     <li><div class="tooltip">file_permissions_sshd_pub_key<span class="tooltiptext">Verify Permissions on SSH Server Public *.pub Key Files</span></div></li>
     <li><div class="tooltip">no_empty_passwords<span class="tooltiptext">Prevent Login to Accounts With Empty Password</span></div></li>
+    <li><div class="tooltip">no_empty_passwords_etc_shadow<span class="tooltiptext">Ensure There Are No Accounts With Blank or Null Passwords</span></div></li>
     <li><div class="tooltip">package_MFEhiplsm_installed<span class="tooltiptext">Install the Host Intrusion Prevention System (HIPS) Module</span></div></li>
     <li><div class="tooltip">package_rsyslog_installed<span class="tooltiptext">Ensure rsyslog is Installed</span></div></li>
     <li><div class="tooltip">partition_for_home<span class="tooltiptext">Ensure /home Located On Separate Partition</span></div></li>
@@ -4473,6 +4474,7 @@
     </ul>
   <li class="collapsible">CCI-002038</li>
     <ul class="content">
+    <li><div class="tooltip">disallow_bypass_password_sudo<span class="tooltiptext">Disallow Configuration to Bypass Password Requirements for Privilege Escalation</span></div></li>
     <li><div class="tooltip">sudo_remove_no_authenticate<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo !authenticate</span></div></li>
     <li><div class="tooltip">sudo_remove_nopasswd<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo NOPASSWD</span></div></li>
     <li><div class="tooltip">sudo_require_authentication<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo</span></div></li>
@@ -12853,7 +12855,12 @@
     </ul>
   <li class="collapsible">CM-6(b)</li>
     <ul class="content">
+    <li><div class="tooltip">no_empty_passwords_etc_shadow<span class="tooltiptext">Ensure There Are No Accounts With Blank or Null Passwords</span></div></li>
     <li><div class="tooltip">sshd_disable_x11_forwarding<span class="tooltiptext">Disable X11 Forwarding</span></div></li>
+    </ul>
+  <li class="collapsible">CM-6.1(iv)</li>
+    <ul class="content">
+    <li><div class="tooltip">no_empty_passwords_etc_shadow<span class="tooltiptext">Ensure There Are No Accounts With Blank or Null Passwords</span></div></li>
     </ul>
   <li class="collapsible">CM-7(a)</li>
     <ul class="content">
@@ -12914,6 +12921,7 @@
     </ul>
   <li class="collapsible">IA-11</li>
     <ul class="content">
+    <li><div class="tooltip">disallow_bypass_password_sudo<span class="tooltiptext">Disallow Configuration to Bypass Password Requirements for Privilege Escalation</span></div></li>
     <li><div class="tooltip">sudo_remove_no_authenticate<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo !authenticate</span></div></li>
     <li><div class="tooltip">sudo_remove_nopasswd<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo NOPASSWD</span></div></li>
     <li><div class="tooltip">sudo_require_authentication<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo</span></div></li>
@@ -14177,11 +14185,6 @@
     <li><div class="tooltip">sshd_enable_warning_banner<span class="tooltiptext">Enable SSH Warning Banner</span></div></li>
     <li><div class="tooltip">sshd_enable_warning_banner_net<span class="tooltiptext">Enable SSH Warning Banner</span></div></li>
     </ul>
-  <li class="collapsible">SRG-OS-000024-GPOS-00007</li>
-    <ul class="content">
-    <li><div class="tooltip">sshd_enable_warning_banner<span class="tooltiptext">Enable SSH Warning Banner</span></div></li>
-    <li><div class="tooltip">sshd_enable_warning_banner_net<span class="tooltiptext">Enable SSH Warning Banner</span></div></li>
-    </ul>
   <li class="collapsible">SRG-OS-000027-GPOS-00008</li>
     <ul class="content">
     <li><div class="tooltip">accounts_max_concurrent_login_sessions<span class="tooltiptext">Limit the Number of Concurrent Login Sessions Allowed Per User</span></div></li>
@@ -14424,6 +14427,10 @@
     <ul class="content">
     <li><div class="tooltip">sysctl_kernel_kptr_restrict<span class="tooltiptext">Restrict Exposed Kernel Pointer Addresses Access</span></div></li>
     </ul>
+  <li class="collapsible">SRG-OS-000134-GPOS-00068</li>
+    <ul class="content">
+    <li><div class="tooltip">selinux_state<span class="tooltiptext">Ensure SELinux State is Enforcing</span></div></li>
+    </ul>
   <li class="collapsible">SRG-OS-000138-GPOS-00069</li>
     <ul class="content">
     <li><div class="tooltip">dir_perms_world_writable_sticky_bits<span class="tooltiptext">Verify that All World-Writable Directories Have Sticky Bits Set</span></div></li>
@@ -14450,7 +14457,6 @@
     <li><div class="tooltip">file_owner_var_log<span class="tooltiptext">Verify User Who Owns /var/log Directory</span></div></li>
     <li><div class="tooltip">file_owner_var_log_messages<span class="tooltiptext">Verify User Who Owns /var/log/messages File</span></div></li>
     <li><div class="tooltip">file_owner_var_log_syslog<span class="tooltiptext">Verify User Who Owns /var/log/syslog File</span></div></li>
-    <li><div class="tooltip">file_ownership_var_log_audit<span class="tooltiptext">System Audit Logs Must Be Owned By Root</span></div></li>
     <li><div class="tooltip">file_permissions_var_log<span class="tooltiptext">Verify Permissions on /var/log Directory</span></div></li>
     <li><div class="tooltip">file_permissions_var_log_messages<span class="tooltiptext">Verify Permissions on /var/log/messages File</span></div></li>
     <li><div class="tooltip">file_permissions_var_log_syslog<span class="tooltiptext">Verify Permissions on /var/log/syslog File</span></div></li>
@@ -14563,6 +14569,7 @@
   <li class="collapsible">SRG-OS-000349-GPOS-00137</li>
     <ul class="content">
     <li><div class="tooltip">package_audit_installed<span class="tooltiptext">Ensure the audit Subsystem is Installed</span></div></li>
+    <li><div class="tooltip">service_auditd_enabled<span class="tooltiptext">Enable auditd Service</span></div></li>
     </ul>
   <li class="collapsible">SRG-OS-000350-GPOS-00138</li>
     <ul class="content">
@@ -14619,17 +14626,20 @@
     </ul>
   <li class="collapsible">SRG-OS-000373-GPOS-00156</li>
     <ul class="content">
+    <li><div class="tooltip">disallow_bypass_password_sudo<span class="tooltiptext">Disallow Configuration to Bypass Password Requirements for Privilege Escalation</span></div></li>
     <li><div class="tooltip">sudo_remove_no_authenticate<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo !authenticate</span></div></li>
     <li><div class="tooltip">sudo_remove_nopasswd<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo NOPASSWD</span></div></li>
     <li><div class="tooltip">sudo_require_authentication<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo</span></div></li>
     </ul>
   <li class="collapsible">SRG-OS-000373-GPOS-00157</li>
     <ul class="content">
+    <li><div class="tooltip">disallow_bypass_password_sudo<span class="tooltiptext">Disallow Configuration to Bypass Password Requirements for Privilege Escalation</span></div></li>
     <li><div class="tooltip">sudo_remove_no_authenticate<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo !authenticate</span></div></li>
     <li><div class="tooltip">sudo_remove_nopasswd<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo NOPASSWD</span></div></li>
     </ul>
   <li class="collapsible">SRG-OS-000373-GPOS-00158</li>
     <ul class="content">
+    <li><div class="tooltip">disallow_bypass_password_sudo<span class="tooltiptext">Disallow Configuration to Bypass Password Requirements for Privilege Escalation</span></div></li>
     <li><div class="tooltip">sudo_remove_no_authenticate<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo !authenticate</span></div></li>
     <li><div class="tooltip">sudo_remove_nopasswd<span class="tooltiptext">Ensure Users Re-Authenticate for Privilege Escalation - sudo NOPASSWD</span></div></li>
     </ul>
@@ -14871,6 +14881,7 @@
     <li><div class="tooltip">file_permissions_sshd_private_key<span class="tooltiptext">Verify Permissions on SSH Server Private *_key Key Files</span></div></li>
     <li><div class="tooltip">file_permissions_sshd_pub_key<span class="tooltiptext">Verify Permissions on SSH Server Public *.pub Key Files</span></div></li>
     <li><div class="tooltip">no_empty_passwords<span class="tooltiptext">Prevent Login to Accounts With Empty Password</span></div></li>
+    <li><div class="tooltip">no_empty_passwords_etc_shadow<span class="tooltiptext">Ensure There Are No Accounts With Blank or Null Passwords</span></div></li>
     <li><div class="tooltip">package_MFEhiplsm_installed<span class="tooltiptext">Install the Host Intrusion Prevention System (HIPS) Module</span></div></li>
     <li><div class="tooltip">package_audit_installed<span class="tooltiptext">Ensure the audit Subsystem is Installed</span></div></li>
     <li><div class="tooltip">package_gnutls-utils_installed<span class="tooltiptext">Ensure gnutls-utils is installed</span></div></li>

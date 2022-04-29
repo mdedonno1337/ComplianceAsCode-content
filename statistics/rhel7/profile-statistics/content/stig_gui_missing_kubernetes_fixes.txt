@@ -148,7 +148,6 @@ grub2_uefi_password
 install_antivirus
 install_smartcard_packages
 installed_OS_is_vendor_supported
-kernel_module_dccp_disabled
 libreswan_approved_tunnels
 mount_option_dev_shm_nodev
 mount_option_dev_shm_noexec
@@ -227,6 +226,7 @@ sudo_remove_no_authenticate
 sudo_remove_nopasswd
 sudo_require_reauthentication
 sudo_restrict_privilege_elevation_to_authorized
+sudoers_default_includedir
 sudoers_validate_passwd
 sysctl_net_ipv4_ip_forward
 tftpd_uses_secure_mode
